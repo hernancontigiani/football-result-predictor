@@ -444,7 +444,7 @@ accuracy.append(mean_acc.max())
 ```
 
 
-![png](football_predictor_files/football_predictor_12_0.png)
+![png](images/football_predictor_12_0.png)
 
 
     The best accuracy was with 0.5167107477759076 with k= 25
@@ -486,7 +486,7 @@ accuracy.append(mean_acc.max())
 ```
 
 
-![png](football_predictor_files/football_predictor_13_0.png)
+![png](images/football_predictor_13_0.png)
 
 
     The best accuracy was with 0.5171916326039914 with depth= 10
@@ -541,7 +541,7 @@ accuracy.append(mean_acc_liblinear.max())
 ```
 
 
-![png](football_predictor_files/football_predictor_14_0.png)
+![png](images/football_predictor_14_0.png)
 
 
     The best accuracy liblinear was with 0.502885308968502 with C= 0.01
@@ -617,7 +617,7 @@ plt.title('Classifier type')
 
 
 
-![png](football_predictor_files/football_predictor_18_1.png)
+![png](images/football_predictor_18_1.png)
 
 
 Based on resultds we adapt the following classifier for our footbal predictor model:
