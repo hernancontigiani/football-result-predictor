@@ -125,7 +125,7 @@ df.head()
 
 
 ```python
-df['result'] = df.apply(lambda x : 'win' if x.home_score > x.away_score else 'loose' if x.home_score < x.away_score else 'draw', axis=1)
+df['result'] = df.apply(lambda x : 'wins' if x.home_score > x.away_score else 'loses' if x.home_score < x.away_score else 'draws', axis=1)
 df.head()
 ```
 
@@ -174,7 +174,7 @@ df.head()
       <td>Glasgow</td>
       <td>Scotland</td>
       <td>False</td>
-      <td>draw</td>
+      <td>draws</td>
     </tr>
     <tr>
       <th>1</th>
@@ -187,7 +187,7 @@ df.head()
       <td>London</td>
       <td>England</td>
       <td>False</td>
-      <td>win</td>
+      <td>wins</td>
     </tr>
     <tr>
       <th>2</th>
@@ -200,7 +200,7 @@ df.head()
       <td>Glasgow</td>
       <td>Scotland</td>
       <td>False</td>
-      <td>win</td>
+      <td>wins</td>
     </tr>
     <tr>
       <th>3</th>
@@ -213,7 +213,7 @@ df.head()
       <td>London</td>
       <td>England</td>
       <td>False</td>
-      <td>draw</td>
+      <td>draws</td>
     </tr>
     <tr>
       <th>4</th>
@@ -226,7 +226,7 @@ df.head()
       <td>Glasgow</td>
       <td>Scotland</td>
       <td>False</td>
-      <td>win</td>
+      <td>wins</td>
     </tr>
   </tbody>
 </table>
@@ -291,7 +291,7 @@ df.head()
       <td>Glasgow</td>
       <td>Scotland</td>
       <td>False</td>
-      <td>draw</td>
+      <td>draws</td>
       <td>1</td>
       <td>2</td>
     </tr>
@@ -306,7 +306,7 @@ df.head()
       <td>London</td>
       <td>England</td>
       <td>False</td>
-      <td>win</td>
+      <td>wins</td>
       <td>2</td>
       <td>1</td>
     </tr>
@@ -321,7 +321,7 @@ df.head()
       <td>Glasgow</td>
       <td>Scotland</td>
       <td>False</td>
-      <td>win</td>
+      <td>wins</td>
       <td>1</td>
       <td>2</td>
     </tr>
@@ -336,7 +336,7 @@ df.head()
       <td>London</td>
       <td>England</td>
       <td>False</td>
-      <td>draw</td>
+      <td>draws</td>
       <td>2</td>
       <td>1</td>
     </tr>
@@ -351,7 +351,7 @@ df.head()
       <td>Glasgow</td>
       <td>Scotland</td>
       <td>False</td>
-      <td>win</td>
+      <td>wins</td>
       <td>1</td>
       <td>2</td>
     </tr>
@@ -387,7 +387,7 @@ y[0:5]
 
 
 
-    array(['draw', 'win', 'win', 'draw', 'win'], dtype=object)
+    array(['draws', 'wins', 'wins', 'draws', 'wins'], dtype=object)
 
 
 
@@ -630,7 +630,7 @@ model  = AdaBoostClassifier(n_estimators = 200, random_state = 2).fit(X_train,y_
 ## Test our model
 
 Is time to test our model, we first test it in an scenario that never occurs, football match between Argentina and Galicia.
-<br> We expect to Argentina win this match :)
+<br> We expect to Argentina wins this match :)
 
 
 ```python
@@ -672,11 +672,11 @@ yhat
 
 
 
-    array(['win'], dtype=object)
+    array(['wins'], dtype=object)
 
 
 
-Argentina win! Now we could try with another example more realistic
+Argentina wins! Now we could try with another example more realistic
 
 
 ```python
@@ -690,7 +690,7 @@ yhat
 
 
 
-    array(['loose'], dtype=object)
+    array(['loses'], dtype=object)
 
 
 
@@ -702,11 +702,6 @@ In this part we are goint to save our model for future use and save the schema d
 ```python
 from sklearn.externals import joblib
 import sqlite3
-```
-
-
-```python
-
 ```
 
 
@@ -753,7 +748,7 @@ c.execute('''CREATE TABLE results(
 
 
 
-    <sqlite3.Cursor at 0x20f04472e30>
+    <sqlite3.Cursor at 0x29db4a570a0>
 
 
 
@@ -870,7 +865,7 @@ results.head()
       <td>2</td>
       <td>0</td>
       <td>0</td>
-      <td>draw</td>
+      <td>draws</td>
     </tr>
     <tr>
       <th>1</th>
@@ -878,7 +873,7 @@ results.head()
       <td>1</td>
       <td>4</td>
       <td>2</td>
-      <td>win</td>
+      <td>wins</td>
     </tr>
     <tr>
       <th>2</th>
@@ -886,7 +881,7 @@ results.head()
       <td>2</td>
       <td>2</td>
       <td>1</td>
-      <td>win</td>
+      <td>wins</td>
     </tr>
     <tr>
       <th>3</th>
@@ -894,7 +889,7 @@ results.head()
       <td>1</td>
       <td>2</td>
       <td>2</td>
-      <td>draw</td>
+      <td>draws</td>
     </tr>
     <tr>
       <th>4</th>
@@ -902,7 +897,7 @@ results.head()
       <td>2</td>
       <td>3</td>
       <td>0</td>
-      <td>win</td>
+      <td>wins</td>
     </tr>
   </tbody>
 </table>
